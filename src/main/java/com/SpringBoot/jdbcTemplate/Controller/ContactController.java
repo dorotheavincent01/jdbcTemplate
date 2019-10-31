@@ -13,8 +13,8 @@ public class ContactController {
     ContactRepo contactRepo;
 
     //Add Contact
-    @RequestMapping("/addContact")
-    //@RequestMapping(value = "/addContact", method = RequestMethod.POST)
+    //@RequestMapping("/addContact")
+    @RequestMapping(value = "/addContact", method = RequestMethod.POST)
     @ResponseBody
     public String addContact(@RequestParam("id") int id, @RequestParam("name") String name,
                              @RequestParam("country") String country, @RequestParam("contact_no") int contact_no){
@@ -26,8 +26,8 @@ public class ContactController {
     }
 
     //Update Contact
-    @RequestMapping("/updateContact")
-    //@RequestMapping(value = "/updateContact", method = RequestMethod.PUT)
+    //@RequestMapping("/updateContact")
+    @RequestMapping(value = "/updateContact", method = RequestMethod.PUT)
 
     @ResponseBody
     public String updateContact(@RequestParam("id") int id, @RequestParam("name") String name,
@@ -41,8 +41,8 @@ public class ContactController {
     }
 
     //Delete Contact
-    @RequestMapping("/deleteContact")
-    //@RequestMapping(value = "/deleteContact", method = RequestMethod.DELETE)
+    //@RequestMapping("/deleteContact")
+    @RequestMapping(value = "/deleteContact", method = RequestMethod.DELETE)
     @ResponseBody
     public String deleteContact(@RequestParam("id") int id){
         if(contactRepo.deleteContact(id) >= 1){
@@ -53,8 +53,8 @@ public class ContactController {
     }
 
     //Display all Contacts
-    @RequestMapping("/getAllContact")
-    //@RequestMapping(value = "/getAllContact", method = RequestMethod.GET)
+    //@RequestMapping("/getAllContact")
+    @RequestMapping(value = "/getAllContact", method = RequestMethod.GET)
 
     @ResponseBody
     public List<Contact> getAllContact(){
@@ -62,8 +62,8 @@ public class ContactController {
     }
 
     //Display selected Contact
-    @RequestMapping("/getContact")
-    //@RequestMapping(value = "/getContact", method = RequestMethod.GET)
+    //@RequestMapping("/getContact")
+    @RequestMapping(value = "/getContact", method = RequestMethod.GET)
 
     @ResponseBody
     public Contact getContact(@RequestParam("id") int id){
